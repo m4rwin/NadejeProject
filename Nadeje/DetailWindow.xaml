@@ -1,0 +1,58 @@
+﻿<Window x:Class="Nadeje.DetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nadeje"
+        mc:Ignorable="d"
+        Title="Detail Klienta" Height="500" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="150" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Jméno:" Padding="0"/>
+        <Label Grid.Row="0" Grid.Column="1" Content="Příjmení:" Padding="0"/>
+        <Label Grid.Row="0" Grid.Column="2" Content="Rok narození:" Padding="0"/>
+        <Label Grid.Row="0" Grid.Column="3" Content="Služby cizinci:" Padding="0"/>
+        
+        <TextBox Grid.Row="1" Grid.Column="0" Width="100" Name="txbFirstName" />
+        <TextBox Grid.Row="1" Grid.Column="1" Width="100" Name="txbLastName"/>
+        <TextBox Grid.Row="1" Grid.Column="2" Width="100" Name="txbBirthYear"/>
+        <Label Grid.Row="1" Grid.Column="3" Content="NEVYČERPÁNO" Foreground="DarkGreen" Name="lblServicesForForeign"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Content="Jednorázová první pomoc"/>
+        <DataGrid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Name="dataFirstAid" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Od" Width="80" Binding="{Binding From, StringFormat=\{0:dd.MM.yyyy\}}"/>
+                <DataGridTextColumn Header="Do" Width="80" Binding="{Binding To, StringFormat=\{0:dd.MM.yyyy\}}"/>
+                <DataGridTextColumn Header="Datum vystavení" Width="120" Binding="{Binding Created, StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}}"/>
+                <DataGridTextColumn Header="Přidal" Width="125" Binding="{Binding WhoCreated}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Content="Přerušení služby"/>
+        <DataGrid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" Name="dataServiceInterruption" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Od" Width="100" Binding="{Binding From, StringFormat=\{0:dd.MM.yyyy\}}"/>
+                <DataGridTextColumn Header="Do" Width="100" Binding="{Binding To, StringFormat=\{0:dd.MM.yyyy\}}"/>
+                <DataGridTextColumn Header="Důvod" Width="100" Binding="{Binding Reason}"/>
+                <DataGridTextColumn Header="Poznámka" Width="100" Binding="{Binding Note}"/>
+                <DataGridTextColumn Header="Datum vystavení" Width="100" Binding="{Binding Created,StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}}"/>
+                <DataGridTextColumn Header="Přidal" Width="125" Binding="{Binding WhoCreated}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
