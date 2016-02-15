@@ -11,6 +11,7 @@ namespace Nadeje.Entities
 		public int ID { get; set; }
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
+		public bool Genre { get; set; }
 		public int BirthYear { get; set; }
 		public bool ServicesForForeigners { get; set; } = false;
 		public List<FirstAid> FirstAidList { get; set; }

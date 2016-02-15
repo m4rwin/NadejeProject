@@ -12,15 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Nadeje.Entities;
+using MahApps.Metro.Controls;
 
 namespace Nadeje
 {
 	/// <summary>
 	/// Interaction logic for DetailWindow.xaml
 	/// </summary>
-	public partial class DetailWindow : Window
+	public partial class DetailWindow : MetroWindow
 	{
 		private Human CurrentItem;
+
+		public DetailWindow() { }
 
 		public DetailWindow(Human selection)
 		{
