@@ -6,24 +6,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nadeje"
         mc:Ignorable="d"
-        Title="Přihlašování" Height="150" Width="200"
-        ShowInTaskbar="False" WindowStartupLocation="CenterScreen"
-                      ShowMaxRestoreButton="False">
+        Title="Přihlašování" Height="190" Width="220"
+        ShowInTaskbar="True" WindowStartupLocation="CenterScreen"
+                      ShowMaxRestoreButton="False"
+                      BorderThickness="0" 
+                      GlowBrush="Black"
+                      Icon="Pictures/ubulhara.ico">
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.RowDefinitions>
                 <RowDefinition Height="35"></RowDefinition>
                 <RowDefinition Height="35"></RowDefinition>
                 <RowDefinition Height="50"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="70"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Content="Uživatel: " VerticalAlignment="Center"></Label>
-            <TextBox Grid.Row="0" Grid.Column="1" Width="100" Height="30"></TextBox>
-            <Label Grid.Row="1" Grid.Column="0" Content="Heslo: " VerticalAlignment="Center"></Label>
-            <TextBox Grid.Row="1" Grid.Column="1" Width="100" Height="30"></TextBox>
+
+        <TextBox Grid.Row="0" Grid.Column="0" Width="120" Height="30" Name="txbNick" VerticalContentAlignment="Center" Controls:TextBoxHelper.Watermark="Příhlašovací jméno"></TextBox>
+        <PasswordBox Grid.Row="1" Grid.Column="0" Width="120" Height="30" Name="txbPsw" KeyDown="Button_KeyDown" VerticalContentAlignment="Center" Controls:TextBoxHelper.Watermark="Heslo"></PasswordBox>
             <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Přihlásit" Click="Button_Click" Width="100" Height="40"></Button>
+            <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Content="---" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="lblErrorMessage" Controls:ControlsHelper.ContentCharacterCasing="Upper"></Label>
         </Grid>
 </Controls:MetroWindow>

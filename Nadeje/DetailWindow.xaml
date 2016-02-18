@@ -3,15 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Nadeje"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="Detail Klienta" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Detail Klienta" Height="600" Width="800" WindowStartupLocation="CenterScreen"
+                      SaveWindowPosition="True"
+                      BorderBrush="{DynamicResource AccentColorBrush}"
+                      BorderThickness="1"
+                      Icon="Pictures/ubulhara.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
-            <RowDefinition Height="30" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="40" />
             <RowDefinition Height="150" />
             <RowDefinition Height="40" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="220" />
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -30,30 +35,36 @@
         <TextBox Grid.Row="1" Grid.Column="0" Width="100" Height="25" Name="txbFirstName" />
         <TextBox Grid.Row="1" Grid.Column="1" Width="100" Height="25" Name="txbLastName"/>
         <TextBox Grid.Row="1" Grid.Column="2" Width="100" Height="25" Name="txbBirthYear"/>
-        <Label Grid.Row="1" Grid.Column="3" Content="NEVYČERPÁNO" Foreground="DarkGreen" Name="lblServicesForForeign" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
-        <Image Grid.Row="1" Grid.Column="4" Source="Pictures/woman.png" Height="25"/>
+        <Controls:ToggleSwitch Name="switchServices" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" OffLabel="NEVYČERPÁNO" OnLabel="VYČERPÁNO" FontSize="10" />
+        <Image Grid.Row="1" Grid.Column="4" Name="imgGenre" Height="35" MouseLeftButtonUp="imgGenre_MouseLeftButtonUp"/>
 
         <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Content="Jednorázová první pomoc" FontWeight="Bold" VerticalAlignment="Bottom"/>
-        <DataGrid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Name="dataFirstAid" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Name="dataFirstAid" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Od" Width="80" Binding="{Binding From, StringFormat=\{0:dd.MM.yyyy\}}"/>
                 <DataGridTextColumn Header="Do" Width="80" Binding="{Binding To, StringFormat=\{0:dd.MM.yyyy\}}"/>
-                <DataGridTextColumn Header="Datum vystavení" Width="120" Binding="{Binding Created, StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}}"/>
+                <DataGridTextColumn Header="Datum vystavení" Width="150" Binding="{Binding Created, StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}}"/>
                 <DataGridTextColumn Header="Přidal" Width="125" Binding="{Binding WhoCreated}"/>
             </DataGrid.Columns>
         </DataGrid>
 
 
         <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" Content="Přerušení služby" FontWeight="Bold" VerticalAlignment="Bottom"/>
-        <DataGrid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="5" Name="dataServiceInterruption" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="5" Name="dataServiceInterruption" AutoGenerateColumns="False" IsReadOnly="true">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Od" Width="100" Binding="{Binding From, StringFormat=\{0:dd.MM.yyyy\}}"/>
                 <DataGridTextColumn Header="Do" Width="100" Binding="{Binding To, StringFormat=\{0:dd.MM.yyyy\}}"/>
                 <DataGridTextColumn Header="Důvod" Width="100" Binding="{Binding Reason}"/>
                 <DataGridTextColumn Header="Poznámka" Width="100" Binding="{Binding Note}"/>
-                <DataGridTextColumn Header="Datum vystavení" Width="100" Binding="{Binding Created,StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}}"/>
+                <DataGridTextColumn Header="Datum vystavení" Width="150" Binding="{Binding Created,StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}}"/>
                 <DataGridTextColumn Header="Přidal" Width="125" Binding="{Binding WhoCreated}"/>
             </DataGrid.Columns>
         </DataGrid>
+
+        <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="5" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Name="btnAddJP" Height="40" Width="110" Margin="10,5,10,5" Content="Přidat JP" Click="btnAddJP_Click"></Button>
+            <Button Name="btnAddServices" Height="40" Width="110" Margin="10,5,10,5" Content="Přerušené služby" Click="btnAddServices_Click"></Button>
+            <Button Name="btnSave" Height="40" Width="110" Margin="10,5,10,5" Content="Uložit" Click="btnSave_Click"></Button>
+        </StackPanel>
     </Grid>
 </Controls:MetroWindow>

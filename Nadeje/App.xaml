@@ -25,6 +25,9 @@
             </Style>-->
 
         <ResourceDictionary>
+            <Color x:Key="AccentColor">#41b1e1</Color>
+            <SolidColorBrush x:Key="AccentColorBrush" Color="{StaticResource AccentColor}"/>
+
             <ResourceDictionary.MergedDictionaries>
                 <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
