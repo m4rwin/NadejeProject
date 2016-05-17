@@ -8,6 +8,14 @@
                       BorderBrush="{DynamicResource AccentColorBrush}"
                       BorderThickness="1.5"
                       Icon="Pictures/ubulhara.ico">
+    
+    <!--
+    Postup pri stazeni noveho repozitare
+    
+    1. Spustit Package Managera Console
+    2. Install-Package MahApps.Metro.Resources
+    -->
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>

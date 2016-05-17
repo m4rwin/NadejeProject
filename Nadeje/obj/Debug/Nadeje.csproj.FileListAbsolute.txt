@@ -6,11 +6,9 @@ C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\bin\Debug\System.Windows.I
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\bin\Debug\MahApps.Metro.pdb
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\bin\Debug\MahApps.Metro.xml
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\MainWindow.baml
-C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\Resources\Icons.baml
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\DetailWindow.g.cs
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\LoginWindow.g.cs
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\MainWindow.g.cs
-C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\Resources\Icons.g.cs
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\App.g.cs
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\Nadeje_MarkupCompile.cache
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\Nadeje_MarkupCompile.lref

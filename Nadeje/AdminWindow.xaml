@@ -1,0 +1,18 @@
+﻿<Window x:Class="Nadeje.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nadeje"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="300" Width="300">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBox Width="120" Height="30" Name="txbDbName" Controls:TextBoxHelper.Watermark="DB Name"/>
+            <TextBox Width="120" Height="30" Name="txbDbUser" Controls:TextBoxHelper.Watermark="DB user"/>
+            <TextBox Width="120" Height="30" Name="txbDbPsw" Controls:TextBoxHelper.Watermark="DB psw"/>
+            <Button x:Name="button" Content="Create DB" HorizontalAlignment="Left" Margin="98,43,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

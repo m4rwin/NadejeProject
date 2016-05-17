@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Nadeje.Entities
+﻿namespace Nadeje.Entities
 {
 	public enum UserType
 	{
 		SP, // Socialni Pracovnik
-		PSS // Pracovnik v Socialnich Sluzbach
+		PSS, // Pracovnik v Socialnich Sluzbach
+		ADMIN
 	}
 
 	public class User
@@ -29,6 +24,11 @@ namespace Nadeje.Entities
 			else if (this.Nick.Equals("martin") && this.Psw.Equals("martin"))
 			{
 				this.Type = UserType.PSS;
+				return true;
+			}
+			else if(this.Nick.Equals("marwin") && this.Psw.Equals("marwin"))
+			{
+				this.Type = UserType.ADMIN;
 				return true;
 			}
 			return false;
