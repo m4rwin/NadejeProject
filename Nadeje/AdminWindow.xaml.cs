@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nadeje.Db;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,23 @@ namespace Nadeje
 	/// </summary>
 	public partial class AdminWindow : Window
 	{
+		#region C-tor
 		public AdminWindow()
 		{
 			InitializeComponent();
 		}
+		#endregion
 
-		private void button_Click(object sender, RoutedEventArgs e)
+		#region Events
+		private void btnAddUser_Click(object sender, RoutedEventArgs e)
 		{
+			string usr = txbUserName.Text;
+			string psw = txbUserPsw.Text;
+			string role = cmbRole.Text;
 
+			string con = @"Data Source=MARWINPC\SQLEXPRESS;Initial Catalog=NadejeDb;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+			DbManager.Insert(con, "dbo.user", usr, psw, role);
 		}
+		#endregion
 	}
 }

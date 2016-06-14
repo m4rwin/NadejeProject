@@ -6,13 +6,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nadeje"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="300" Width="300">
+        Title="Admin" Height="300" Width="500">
     <Grid>
-        <StackPanel Orientation="Vertical">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
             <TextBox Width="120" Height="30" Name="txbDbName" Controls:TextBoxHelper.Watermark="DB Name"/>
             <TextBox Width="120" Height="30" Name="txbDbUser" Controls:TextBoxHelper.Watermark="DB user"/>
             <TextBox Width="120" Height="30" Name="txbDbPsw" Controls:TextBoxHelper.Watermark="DB psw"/>
-            <Button x:Name="button" Content="Create DB" HorizontalAlignment="Left" Margin="98,43,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+            <Button x:Name="btnCreateDb" Content="Create DB" Height="30" Width="75"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBox Width="120" Height="30" Name="txbUserName" Controls:TextBoxHelper.Watermark="name"/>
+            <TextBox Width="120" Height="30" Name="txbUserPsw" Controls:TextBoxHelper.Watermark="psw"/>
+            <ComboBox Width="120" Height="30" Name="cmbRole" Controls:TextBoxHelper.Watermark="role">
+                <ComboBoxItem Content="SP"></ComboBoxItem>
+                <ComboBoxItem Content="PSS"></ComboBoxItem>
+                <ComboBoxItem Content="Admin"></ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="btnAddUser" Content="Add User" Height="30" Width="75" Click="btnAddUser_Click"/>
         </StackPanel>
     </Grid>
 </Window>

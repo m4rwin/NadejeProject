@@ -27,3 +27,5 @@ C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\bin\Debug\Nadeje.exe.manif
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\bin\Debug\Nadeje.application
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\Nadeje.exe.manifest
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\Nadeje.application
+C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\AdminWindow.g.cs
+C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\AdminWindow.baml

@@ -14,6 +14,7 @@ namespace Nadeje
 	{
 		private User CurrentUser;
 
+		#region C-tor
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -29,7 +30,8 @@ namespace Nadeje
 			txbFirstName.Focus();
 			SetRights();
 		}
-
+		#endregion
+		
 		#region Methods
 		private void SetRights()
 		{

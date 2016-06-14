@@ -3,6 +3,7 @@ using Nadeje.Entities;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using System;
 
 namespace Nadeje
 {
@@ -11,6 +12,7 @@ namespace Nadeje
 	/// </summary>
 	public partial class LoginPage : MetroWindow
 	{
+		#region C-tor
 		public LoginPage()
 		{
 			InitializeComponent();
@@ -18,9 +20,17 @@ namespace Nadeje
 			txbNick.Focusable = true;
 			txbNick.Focus();
 		}
+		#endregion
 
+		#region Events
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
+			if (RunDbAdmin())
+			{
+				ShowAdministration();
+				return;
+			}
+
 			User u = new User() { Nick = txbNick.Text, Psw = txbPsw.Password };
 			if (u.IsUser())
 			{
@@ -43,5 +53,29 @@ namespace Nadeje
 				Button_Click(null, null);
 			}
 		}
+
+		private void Administration_Close(object sender, EventArgs e)
+		{
+			this.Show();
+		}
+		#endregion
+
+		#region Methods
+		private bool RunDbAdmin()
+		{
+			if (Keyboard.IsKeyDown(Key.LeftCtrl) && Keyboard.IsKeyDown(Key.LeftAlt))
+				return true;
+			else
+				return false;
+		}
+
+		private void ShowAdministration()
+		{
+			var window = new AdminWindow();
+			window.Closed += Administration_Close;
+			this.Hide();
+			window.Show();
+		}
+		#endregion
 	}
 }
