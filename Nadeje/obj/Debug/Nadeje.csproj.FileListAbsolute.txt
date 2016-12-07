@@ -20,7 +20,6 @@ C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\Nadeje.Propertie
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\Nadeje.csproj.GenerateResource.Cache
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\Nadeje.exe
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\Nadeje.pdb
-C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\Nadeje.csprojResolveAssemblyReference.cache
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\AddJPWindow.baml
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\obj\Debug\AddJPWindow.g.cs
 C:\Users\marwin\Documents\GitHub\NadejeProject\Nadeje\bin\Debug\Nadeje.exe.manifest
